@@ -1,0 +1,31 @@
+	body, td{font-size:12px}
+	.menu_box_pad{background:#F6F6F6;padding:0 2px 2px 2px}
+	.menu_box{border-top:1px solid #ababab;border-left:1px solid #ababab;border-right:1px solid #d6d6d6;border-bottom:1px solid #d6d6d6}
+	.menu_box th{
+	line-height:22px;
+	width:10px;
+	background-image: url(../images/menu_list_icon.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+	.menu_box td{
+	line-height:20px;
+	background-image: url(../images/menu_list_split.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+	.menu_box a{text-decoration:none;color:#000}
+	.menu_box a:hover{text-decoration:underline}
+	.hand{cursor:hand;cursor:pointer}
+	.ctrl_menu{border-left:1px solid #767676;border-bottom:1px solid #767676;border-right:1px solid #767676;background:#CCCCCC}
+	.ctrl_menu_title{padding-left:15px;font-weight:bold;line-height:25px}
+	.ctrl_menu_title_bg{
+	background-image: url(../images/menu_title_bg.gif);
+}
+	.top_bg{
+	background-image: url(../images/top_bg.gif);
+}
+	#top_nav_menu {color:#fff}
+	#top_nav_menu a{text-decoration:none;color:#fff}
+	#top_nav_menu a:hover{text-decoration:underline;color:#ff6}
+	</style>

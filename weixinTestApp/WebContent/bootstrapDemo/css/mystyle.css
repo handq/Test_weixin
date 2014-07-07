@@ -1,0 +1,26 @@
+.show-grid [class^="col-"] {
+padding-top: 10px;
+padding-bottom: 10px;
+    margin-bottom:10px;
+    margin-top:5px;
+background-color: #eee;
+height:100px;
+border: 1px solid rgba(86,61,124,.2);
+}
+
+
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+// Usage as mixins
+.element {
+  .pull-left();
+}
+.another-element {
+  .pull-right();
+}
+

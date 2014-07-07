@@ -1,0 +1,20 @@
+package com.csst.business.common;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
+
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SessionImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+public class UUIDGenerator implements IdentifierGenerator {
+
+	@Override
+	public Serializable generate(SessionImplementor session, Object object)
+			throws HibernateException {
+		String id = UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
+		return id;
+	}
+
+}

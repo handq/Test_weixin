@@ -1,0 +1,78 @@
+.text {
+	font-size: 12px;
+	line-height: 17px;
+	color: #666666;
+	text-decoration: none;
+}
+.text2 {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: normal;
+	color: #333333;
+}
+.tal {
+	font-size: 12px;
+	line-height: 17px;
+	color: #333333;
+	text-decoration: none;
+	border: 1px solid #CCCCCC;
+}
+.text_cuti {
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.text-zw {
+	font-family: "ËÎÌו";
+	font-size: 12px;
+	line-height: 18px;
+	color: #666666;
+	text-decoration: none;
+}
+.sy {
+	background-color: #437EB9;
+	height: 0px;
+	width: 0px;
+}
+.tt {
+	line-height: 17px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #4279B1;
+	text-decoration: none;
+}
+a:link {
+	font-size: 12px;
+	line-height: 17px;
+	color: #333333;
+	text-decoration: none;
+}
+a:visited {
+	font-size: 12px;
+	line-height: 17px;
+	color: #003366;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 12px;
+	line-height: 17px;
+	text-decoration: underline;
+}
+.fm {
+	font-size: 12px;
+	line-height: 17px;
+	color: #162B3F;
+	text-decoration: none;
+	background-color: #B6CDE4;
+}
+.fm_blue {
+	font-size: 12px;
+	line-height: 17px;
+	color: #2C6283;
+	text-decoration: none;
+	background-color: #C7DFED;
+	border: 1px solid #67A7CD;
+}

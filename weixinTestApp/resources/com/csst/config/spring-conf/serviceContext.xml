@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+	<bean id="testService" class="com.csst.business.service.impl.TestServiceImpl">
+		<property name="testDao" ref="testDao"></property>
+	</bean>
+	<!--自定义菜单服务-->
+	<bean id="userMenuService" class="com.csst.business.service.impl.UserMenuServiceImpl">
+		<property name="userMenuDao" ref="userMenuDao"></property>
+	</bean>
+	
+	<bean id="userMenuAction" class="com.csst.business.action.UserMenuAction">
+		<property name="userMenuService" ref="userMenuService"></property>
+	</bean>
+	
+	<!--企业信息管理-->
+	<bean id="companyService" class="com.csst.business.service.impl.CompanyServiceImpl">
+		<property name="companyDao" ref="companyDao"></property>
+	</bean>
+	<bean id="companyAction" class="com.csst.business.action.CompanyAction">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+	
+	<!--用户信息管理-->
+	<bean id="userService" class="com.csst.business.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userAction" class="com.csst.business.action.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+</beans>

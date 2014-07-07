@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.csst.business.model">
+	<class name="TTrUser" table="T_TR_USER">
+		<id name="Id" type="java.lang.String" column="PK_TU_ID">
+			<generator class="com.csst.business.common.UUIDGenerator" />
+		</id>
+		<property name="tuUsername" column="TU_USERNAME" type="string"
+			not-null="false" length="32" />
+		<property name="tuPassword" column="TU_PASSWORD" type="string"
+			not-null="false" length="32" />
+		<property name="tuEmail" column="TU_Email" type="string"
+			not-null="false" length="200" />
+		<property name="tuPhone" column="TU_PHONE" type="string"
+			not-null="false" length="200" />
+		<property name="tuIdno" column="TU_IDNO" type="string"
+			not-null="false" length="200" />
+		<property name="tuSex" column="TU_SEX" type="integer"
+			not-null="false" length="10" />
+		<property name="tuArea" column="TU_AREA" type="string"
+			not-null="false" length="10" />
+		<property name="tuMajor" column="TU_MAJOR" type="string"
+			not-null="false" length="200" />
+		<property name="tuCreatetime" column="TU_CREATETIME" type="timestamp"
+			not-null="false" length="19" />
+		<property name="tuCreateuser" column="TU_CREATEUSER" type="string"
+			not-null="false" length="32" />
+		<property name="tuStatus" column="TU_STATUS" type="integer"
+			not-null="false" length="10" />
+		<property name="tuAudit" column="TU_AUDIT" type="integer"
+			not-null="false" length="10" />
+		<property name="tuEnable" column="TU_ENABLE" type="integer"
+			not-null="false" length="10"/>
+		<property name="realName" column="tu_realName" type="string"
+			not-null="false" length="10"/>
+		<property name="registAuthCode" column="tu_registAuthCode" type="integer"
+			not-null="false" length="10"/>
+		
+
+	</class>
+</hibernate-mapping>

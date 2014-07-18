@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+配置说明：
+1、根节点ajax-config中的属性spring，标注里面所有的config子节点默认是否从spring容器中去查找对象
+2、子节点config中的属性有：
+	class:映射的类的名称，如果是从spring容器中查找的对象，那么它的值是bean的id；
+		  如果不是spring容器中获得，那么这里要配置类的完整包路径，例如
+		  com.hx.system.app.SystemProcessModule
+	id:标注在JavaScript中调用到的引用标记
+	spring:此属性用来控制config节点的类是否是从spring容器中获得，如果没有配置，默认采用ajax-config
+		   节点的spring属性值。
+3、调用例子：
+a)、在JavaScript中，首先使用下面方法引入相应的JS包
+<hx:ajax jquery="true" />
+b)、再使用下面方法调用后台业务类
+	$hx.service("mm.getAllModuleList",[],function(){
+		var result=this.getResult();
+	});
+	对上面代码的诠释如下：
+	$hx是定义的组件对象,service是$hx对象中的方法。
+	service方法有三个参数
+	第一个参数："mm.getAllModuleList"，其中的"mm"表示在ajax配置文件中的id属性值，
+			   "getAllModuleList表示"的是mm对应类中的方法名称
+	第二个参数：是数组类型的js对象，该对象表示的是调用相应方法需要传入的有序值序列（可以不用填写）
+	第三个参数：是一个处理回调的函数，该函数是一个没有参数的函数。当ajax交互完毕后，自动会调用该
+			   回调函数来处理相应结果，在该方法中，使用
+			   this.getResult()就可以获得方法getAllModuleList()所处理的结果
+	另外，上面案例代码中调用的方法由于没有参数传入，所以可以简写为下面形式：
+	$hx.service("mm.getAllModuleList",function(){
+		var result=this.getResult();
+	});
+c)、对于上面实例代码中列出的var result=this.getResult()做下面进一步解释，由于执行java
+后台方法后，返回值是java的数据类型，这里做了一个映射转换，具体转换规则如下：
+======================================================
+Java数据类型						JS数据类型
+======================================================
+java.lang.String				String
+java.lang.StringBuffer			String
+java.lang.StringBuilder			String
+java.util.Date					String
+java.sql.Date					String
+java.sql.Time					String
+java.sql.Timestamp				String
+java.lang.Integer				Number
+java.lang.Float					Number
+java.lang.Double				Number
+java.lang.Long					Number
+java.lang.Boolean 				Boolean
+
+java.util.List					Array
+java.util.Map					JSON
+自定义JavaBean					JSON
+======================================================
+简单的说，
+如果Java方法执行的返回结果是List类型的，那么this.getResult()返回的值将是JS中的数组类型
+如果Java方法执行的返回结果是Map类型的，那么this.getResult()返回的值将是JS中的JSON数据类型
+其他类推
+
+最后说明一点，大家在使用此组件如果遇到组件未能考虑到的功能，可以通知我，再另行调整
+-->
+<ajax-config spring="true">
+	<!-- 这里配置的含义是从spring容器中获得id为moduleManager的实例对象，在js中就可以使用mm.<方法名>来调用了 -->
+	<!--  <config class="moduleManager" id="mm"/>
+	<config class="attachFileAction" id="arch" spring="true"></config>-->
+	<config class="userMenuAction" id="uma" />
+	<config class="userAction" id="usa" />
+</ajax-config>

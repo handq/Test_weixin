@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<package name="company" extends="struts-default" namespace="/company">
+
+		<action name="testAction"
+			 class="com.csst.business.action.CompanyAction" method="testAction">
+			<result name="bbb">
+				/pages/admin/comManager.jsp			
+			</result>
+		</action>
+		<action name="saveCompany"
+			 class="com.csst.business.action.CompanyAction" method="saveCompany">
+		</action>
+		<action name="getCompanyData"
+			 class="com.csst.business.action.CompanyAction" method="getCompanyData">
+			<result name="company">
+				/pages/admin/comManager.jsp			
+			</result>
+		</action>
+		
+	</package>
+</struts>

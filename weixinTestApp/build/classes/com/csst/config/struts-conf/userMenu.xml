@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<package name="userMenu" extends="struts-default" namespace="/userMenu">
+
+		<action name="findAllMenus"
+			 class="com.csst.business.action.UserMenuAction" method="findAllMenus">
+			<result name="bbb">
+				/admin/allMenu.jsp				
+			</result>
+			<result name="allMenuManager">
+				/pages/admin/userMenuManager.jsp			
+			</result>
+		</action>
+		<action name="updateUserMenus"
+			 class="com.csst.business.action.UserMenuAction" method="updateUserMenus">
+			<result name="updateUserMenus" >
+				/admin/updateUserMenus.jsp
+			</result>
+		</action>
+		<action name="getParentUserMenus"
+			 class="com.csst.business.action.UserMenuAction" method="getParentUserMenus">
+			<result name="userMenuAdd" >
+				/pages/admin/useMenuAdd.jsp
+			</result>
+		</action>
+		<action name="saveUserMenu"
+			 class="com.csst.business.action.UserMenuAction" method="saveUserMenu">
+		</action>
+		<action name="deleteUserMenu"
+			 class="com.csst.business.action.UserMenuAction" method="deleteUserMenu">
+			<result name="allMenuManager">
+				/pages/admin/userMenuManager.jsp			
+			</result>
+		</action>
+		<action name="editUserMenu"
+			 class="com.csst.business.action.UserMenuAction" method="editUserMenu">
+			<result name="editMenu">
+				/pages/admin/useMenuEdit.jsp
+			</result>
+		</action>
+	</package>
+</struts>

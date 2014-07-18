@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<package name="admin" extends="struts-default" namespace="/admin">
+
+		<action name="showAllunckeckSellers"
+			 class="com.csst.business.action.AdminAction" method="showAllunckeckSellers">
+			<result name="success">
+				/admin/show_uncheckSellers.jsp
+			</result>
+		</action>
+		
+		<action name="showAllhasCheckedSellers"
+			 class="com.csst.business.action.AdminAction" method="showAllhasCheckedSellers">
+			<result name="success">
+				/admin/show_hascheckSellers.jsp
+			</result>
+		</action>
+		
+		<!-- 将商品的enbale设置为0 -->
+		<action name="deleteDetailById"
+			 class="com.csst.tr.action.AdminAction" method="deleteDetailById">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllhasCheckedSellers</param>
+				<param name="namespace">/admin</param>
+			</result>
+		</action>
+		
+		<!-- 审定用户，由普通用户转变为商户 -->
+		<action name="updateTheSellers"
+			 class="com.csst.tr.action.AdminAction" method="updateTheSellers">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllunckeckSellers</param>
+				<param name="namespace">/admin</param>
+			</result>
+		</action>
+		
+		<!-- 创建一个超级管理员 -->
+		<action name="createAdminUser"
+			 class="com.csst.tr.action.AdminAction" method="createAdminUser">
+			<result name="success">
+				/admin/admin_91_login.jsp
+			</result>
+		</action>
+		
+		<!-- 检查管理员的用户名和密码，正确则进入后台，错误，则返回继续登录 -->
+		<action name="checkOutAdminUser"
+			 class="com.csst.tr.action.AdminAction" method="checkOutAdminUser">
+			<result name="success" type="redirectAction">
+				<param name="actionName">showAllunckeckSellers</param>
+				<param name="namespace">/admin</param> 
+			</result>
+			<result name="error">
+				/admin/admin_91_login.jsp
+			</result>
+		</action>
+		
+		
+	</package>
+	
+	<package name="admin2" extends="json-default" namespace="/admin">
+		<!-- 更新详细的信息 -->	    
+		<action name="updateDetailMsgById"
+			 class="com.csst.tr.action.AdminAction" method="updateDetailMsgById">
+			<result name="success" type="json">
+			</result>
+		</action>
+		
+		<!-- 删除回复的信息 -->	    
+		<action name="deleteReplyById"
+			 class="com.csst.tr.action.AdminAction" method="deleteReplyById">
+			<result name="success" type="json">
+			</result>
+		</action>
+	</package>
+	
+</struts>

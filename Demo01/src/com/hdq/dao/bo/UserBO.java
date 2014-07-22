@@ -1,9 +1,9 @@
 package com.hdq.dao.bo;
 
 public class UserBO {
-	private String id;
-	private String name;
-	private int age;
+	private String id;//id
+	private String name;//name
+	private int age;//age
 	public String getId() {
 		return id;
 	}
